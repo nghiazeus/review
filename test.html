@@ -5,42 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emoji Button Test</title>
     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.0/dist/index.min.js"></script>
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@latest/dist/tailwind.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/emoji-button@4.6.0/dist/index.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Textarea -->
-    <textarea id="feedback" placeholder="Your feedback..."
-        class="bg-slate-100 text-slate-600 h-28 w-full placeholder:text-slate-600 placeholder:opacity-50 border border-slate-200 resize-none outline-none rounded-lg p-2 duration-300 focus:border-slate-600"></textarea>
-
-    <!-- Button for Emoji -->
-    <button id="emoji-button"
-        class="flex-grow fill-slate-600 flex justify-center items-center rounded-lg p-2 duration-300 bg-slate-100 hover:border-slate-600 focus:fill-blue-200 focus:bg-blue-400 border border-slate-200">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
-            <path
-                d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z">
-            </path>
-        </svg>
-    </button>
-
-    <!-- Emoji Button Script -->
-    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.4.2/dist/index.min.js"></script>
-
-    <script>
-        // Lấy phần tử textarea và button
-        const textarea = document.getElementById('feedback');
-        const button = document.getElementById('emoji-button');
-
-        // Khởi tạo Emoji Button
-        const picker = new EmojiButton();
-
-        // Xử lý sự kiện khi chọn emoji
-        picker.on('emoji', emoji => {
-            textarea.value += emoji;
-        });
-
-        // Hiển thị Emoji Button khi nhấn vào nút
-        button.addEventListener('click', () => {
-            picker.togglePicker(button);
-        });
-    </script>
+    <div class="mt-8 bg-white shadow-lg rounded-lg p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Card món ăn -->
+            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-h-96 overflow-y-auto">
+                <h3 class="text-lg font-semibold text-gray-800">THỰC ĐƠN</h3>
+                <div class="khaivi mt-4">
+                    <strong>Khai vị</strong>
+                    <ul>
+                        <li>Gỏi Cuốn: Cuốn bánh tráng với tôm, thịt heo, rau sống và bún.</li>
+                        <li>Chả Giò: Cuốn chả giò giòn rụm với nhân thịt heo, nấm, và rau củ.</li>
+                        <li>Súp Ngô: Súp ngô ngọt với thịt gà và rau củ.</li>
+                    </ul>
+                    <strong>Khai vị</strong>
+                    <ul>
+                        <li>Gỏi Cuốn: Cuốn bánh tráng với tôm, thịt heo, rau sống và bún.</li>
+                        <li>Chả Giò: Cuốn chả giò giòn rụm với nhân thịt heo, nấm, và rau củ.</li>
+                        <li>Súp Ngô: Súp ngô ngọt với thịt gà và rau củ.</li>
+                    </ul>
+                    <strong>Khai vị</strong>
+                    <ul>
+                        <li>Gỏi Cuốn: Cuốn bánh tráng với tôm, thịt heo, rau sống và bún.</li>
+                        <li>Chả Giò: Cuốn chả giò giòn rụm với nhân thịt heo, nấm, và rau củ.</li>
+                        <li>Súp Ngô: Súp ngô ngọt với thịt gà và rau củ.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Card món nước -->
+            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-h-96 overflow-y-auto">
+                <h3 class="text-lg font-semibold text-gray-800">MÓN NƯỚC</h3>
+                <ul class="mt-4">
+                    <li>Nước Chanh: Nước chanh tươi với đường và đá.</li>
+                    <li>Trà Sữa: Trà sữa với các loại topping như trân châu và thạch.</li>
+                    <li>Rượu Vang: Rượu vang đỏ hoặc trắng tùy theo sở thích.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
