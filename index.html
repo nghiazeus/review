@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Review</title>
     <link href="dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="src/input.css">
@@ -13,7 +14,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/emoji-button@4.6.0/dist/index.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -69,7 +69,7 @@
                         <div id="searchHistoryMobile"
                             class="absolute inset-x-0 top-full mt-1 w-full max-w-xs bg-white border border-gray-300 rounded-lg shadow-lg hidden">
                             <ul id="searchHistoryListMobile" class="divide-y divide-gray-200">
-                                <!-- Các mục lịch sử tìm kiếm sẽ được thêm vào đây -->
+
                             </ul>
                         </div>
                     </div>
@@ -150,6 +150,9 @@
                                 const li = document.createElement('li');
                                 li.classList.add('flex', 'justify-between', 'items-center', 'border-b', 'py-2');
 
+                                const icon = document.createElement('i');
+                                icon.classList.add('bi', 'bi-stopwatch', 'mr-2');
+
                                 const termSpan = document.createElement('span');
                                 termSpan.textContent = term;
                                 termSpan.classList.add('flex-grow', 'cursor-pointer');
@@ -170,10 +173,12 @@
                                     updateSearchHistory();
                                 });
 
+                                // Thêm icon và termSpan vào li
+                                li.appendChild(icon);
                                 li.appendChild(termSpan);
                                 li.appendChild(deleteButton);
                                 searchHistoryList.appendChild(li);
-                                searchHistoryListMobile.appendChild(li.cloneNode(true)); // Thêm danh sách vào cả desktop và mobile
+                                searchHistoryListMobile.appendChild(li.cloneNode(true));
                             });
                             searchHistory.classList.remove('hidden');
                             searchHistoryMobile.classList.remove('hidden');
@@ -648,7 +653,8 @@
             <!-- Image Tiles -->
             <a href="#" class="flex bg-gray-200 rounded-lg p-4 m-2 min-w-max">
                 <div class="w-48 bg-gray-400 rounded-lg overflow-hidden">
-                    <img src="https://kientruchoanmy.vn/wp-content/uploads/2023/05/1_Camera_6_2.jpg" alt="" class="w-full h-full object-cover rounded-lg">
+                    <img src="https://kientruchoanmy.vn/wp-content/uploads/2023/05/1_Camera_6_2.jpg" alt=""
+                        class="w-full h-full object-cover rounded-lg">
                 </div>
                 <div class="flex flex-col items-start ml-4">
                     <h4 class="text-xl text-black font-semibold">Beatesk</h4>
@@ -658,7 +664,8 @@
             <!-- Tile 2 -->
             <a href="#" class="flex bg-gray-200 rounded-lg p-4 m-2 min-w-max">
                 <div class="w-48 bg-gray-400 rounded-lg overflow-hidden">
-                    <img src="https://nhahangdep.vn/wp-content/uploads/2018/12/kinh-nghiem-thiet-ke-nha-hang-hai-mat-tien-hieu-qua-3.jpg" alt="" class="w-full h-full object-cover rounded-lg">
+                    <img src="https://nhahangdep.vn/wp-content/uploads/2018/12/kinh-nghiem-thiet-ke-nha-hang-hai-mat-tien-hieu-qua-3.jpg"
+                        alt="" class="w-full h-full object-cover rounded-lg">
                 </div>
                 <div class="flex flex-col items-start ml-4">
                     <h4 class="text-xl text-black font-semibold">Chicken Plus</h4>
@@ -668,7 +675,8 @@
             <!-- Image Tiles -->
             <a href="#" class="flex bg-gray-200 rounded-lg p-4 m-2 min-w-max">
                 <div class="w-48 bg-gray-400 rounded-lg overflow-hidden">
-                    <img src="https://kientruchoanmy.vn/wp-content/uploads/2023/05/1_Camera_6_2.jpg" alt="" class="w-full h-full object-cover rounded-lg">
+                    <img src="https://kientruchoanmy.vn/wp-content/uploads/2023/05/1_Camera_6_2.jpg" alt=""
+                        class="w-full h-full object-cover rounded-lg">
                 </div>
                 <div class="flex flex-col items-start ml-4">
                     <h4 class="text-xl text-black font-semibold">Beatesk</h4>
@@ -678,7 +686,8 @@
             <!-- Tile 2 -->
             <a href="#" class="flex bg-gray-200 rounded-lg p-4 m-2 min-w-max">
                 <div class="w-48 bg-gray-400 rounded-lg overflow-hidden">
-                    <img src="https://nhahangdep.vn/wp-content/uploads/2018/12/kinh-nghiem-thiet-ke-nha-hang-hai-mat-tien-hieu-qua-3.jpg" alt="" class="w-full h-full object-cover rounded-lg">
+                    <img src="https://nhahangdep.vn/wp-content/uploads/2018/12/kinh-nghiem-thiet-ke-nha-hang-hai-mat-tien-hieu-qua-3.jpg"
+                        alt="" class="w-full h-full object-cover rounded-lg">
                 </div>
                 <div class="flex flex-col items-start ml-4">
                     <h4 class="text-xl text-black font-semibold">Chicken Plus</h4>
@@ -690,111 +699,44 @@
             const root = document.documentElement;
             const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
             const marqueeContent = document.querySelector(".marquee-content");
-    
+
             root.style.setProperty("--marquee-elements", marqueeContent.children.length);
-    
+
             for (let i = 0; i < marqueeElementsDisplayed; i++) {
                 marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
             }
         </script>
     </div>
-<br>
+    <br>
     <!-- Main -->
     <div class="flex bg-gray-100 overflow-hidden shadow-lg">
         <!-- Phần chứa hình ảnh (7 phần) -->
         <div class="w-7/12 relative">
             <a href="#">
-                <img src="https://kientruchoanmy.vn/wp-content/uploads/2023/03/z3721059789261_08b35b195d108635ffccf321f9b79223.jpg" alt="Sample Image"
-                class="w-full h-full object-cover">
-            <!-- Dòng chữ ở góc trái bên dưới -->
-            <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-sm px-4 py-2 ">
-                NHÀ HÀNG CAO CẤP 7 SAO
-            </div>
+                <img src="https://kientruchoanmy.vn/wp-content/uploads/2023/03/z3721059789261_08b35b195d108635ffccf321f9b79223.jpg"
+                    alt="Sample Image" class="w-full h-full object-cover">
+                <!-- Dòng chữ ở góc trái bên dưới -->
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-xs px-4 py-2 ">
+                    NHÀ HÀNG CAO CẤP 7 SAO
+                </div>
             </a>
         </div>
-        
+
         <!-- Phần còn lại (5 phần) -->
         <div class="w-5/12 relative">
             <a href="#">
                 <img src="https://pendecor.vn/uploads/files/2023/08/20/xuan-son-mat-tien-7.jpg" alt="Sample Image"
-                class="w-full h-full object-cover">
-            <!-- Dòng chữ ở góc trái bên dưới -->
-            <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-sm px-4 py-2">
-                QUÁN ĂN HẢI SẢN CAO CẤP
-            </div>
+                    class="w-full h-full object-cover">
+                <!-- Dòng chữ ở góc trái bên dưới -->
+                <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-xs px-4 py-2">
+                    QUÁN ĂN HẢI SẢN CAO CẤP
+                </div>
             </a>
         </div>
     </div>
-    
+
     <!-- Carousel -->
-    <div class="carousel relative container mx-auto" style="max-width:1600px;">
-        <div class="carousel-inner relative overflow-hidden w-full">
-            <!--Slide 1-->
-            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-            <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('https://images.unsplash.com/photo-1422190441165-ec2956dc9ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
 
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-            <!--Slide 2-->
-            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80');">
-
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Real Bamboo Wall Clock</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-            <!--Slide 3-->
-            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');">
-
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Brown and blue hardbound book</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-            <!-- Add additional indicators for each slide-->
-            <ol class="carousel-indicators">
-                <li class="inline-block mr-3">
-                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                </li>
-                <li class="inline-block mr-3">
-                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                </li>
-                <li class="inline-block mr-3">
-                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                </li>
-            </ol>
-
-        </div>
-    </div>
     <!-- ----------- -->
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
         <div class="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
@@ -892,7 +834,8 @@
                 </div>
                 <!-- Destop -->
                 <div class="mt-10 lg:block hidden">
-                    <label class="text-xl font-medium leading-5 text-gray-800 dark:text-white">Nhận thông tin cập nhật</label>
+                    <label class="text-xl font-medium leading-5 text-gray-800 dark:text-white">Nhận thông tin cập
+                        nhật</label>
                     <div
                         class="cursor-pointer flex items-center justify-between border border-gray-800 dark:border-white mt-4">
                         <input type="text"
@@ -913,7 +856,8 @@
             </div>
             <!-- mobile -->
             <div class="mt-10 lg:hidden">
-                <label class="text-xl font-medium leading-5 text-gray-800 dark:text-white">Nhận thông tin cập nhật</label>
+                <label class="text-xl font-medium leading-5 text-gray-800 dark:text-white">Nhận thông tin cập
+                    nhật</label>
                 <div class="flex items-center justify-between border border-gray-800 dark:border-white mt-4">
                     <input type="text"
                         class="text-base leading-4 p-4 relative z-0 w-full focus:outline-none text-gray-800 placeholder-gray-800 dark:text-white dark:placeholder-white dark:border-white dark:bg-gray-900"
@@ -933,6 +877,18 @@
             <!--  -->
         </div>
     </footer>
+    <script>
+        document.addEventListener('touchstart', function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        document.addEventListener('gesturestart', function (event) {
+            event.preventDefault();
+        });
+
+    </script>
 </body>
 
 </html>

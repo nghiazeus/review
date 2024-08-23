@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    -webkit-user-select: none; /* Ngăn chọn văn bản */
+    -webkit-touch-callout: none; /* Ngăn menu bật lên khi giữ một đối tượng */
+}
+
+
 .work-sans {
     font-family: 'Work Sans', sans-serif;
 }
@@ -294,4 +300,9 @@
     color: #000;
     /*Set to match the Tailwind colour you want the active one to be */
 }
+
+input, textarea, select {
+    font-size: 16px;
+}
+
 
