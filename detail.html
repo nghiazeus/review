@@ -80,55 +80,60 @@
 <body>
     <div class="relative">
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="flex">
-                <!-- Hình ảnh -->
-                <div class="w-1/2 p-4">
-                    <div class="relative w-full h-80"> <!-- Tăng chiều cao tại đây -->
+            <!-- Container Flex -->
+            <div class="flex flex-col md:flex-row">
+                <!-- Hình ảnh (Carousel) -->
+                <div class="w-full md:w-2/3 p-4"> <!-- Sử dụng w-full cho mobile và w-1/2 cho desktop -->
+                    <div class="relative w-full h-70">
                         <!-- Carousel -->
                         <div class="carousel relative container mx-auto" style="max-width:1600px;">
                             <div class="carousel-inner relative overflow-hidden w-full">
-                                <!--Slide 1-->
+                                <!-- Slide 1 -->
                                 <input class="carousel-open" type="radio" id="carousel-1" name="carousel"
                                     aria-hidden="true" hidden="" checked="checked">
-                                <div class="carousel-item absolute opacity-0" style="height:50vh;">
+                                <div class="carousel-item absolute opacity-0 rounded-lg overflow-hidden"
+                                    style="height:40vh;">
                                     <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
                                         style="background-image: url('https://i.pinimg.com/564x/e6/ca/a1/e6caa1baa0f67fda68e98ec5ce60e8ed.jpg');">
                                     </div>
                                 </div>
+                                <!-- Điều khiển Slide 1 -->
                                 <label for="carousel-3"
                                     class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
                                 <label for="carousel-2"
                                     class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
-                                <!--Slide 2-->
+                                <!-- Slide 2 -->
                                 <input class="carousel-open" type="radio" id="carousel-2" name="carousel"
                                     aria-hidden="true" hidden="">
-                                <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
+                                <div class="carousel-item absolute opacity-0 rounded-lg overflow-hidden"
+                                    style="height:40vh;">
                                     <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
                                         style="background-image: url('https://i.pinimg.com/564x/f2/ab/b1/f2abb166e8aeea7184fcad79ae00683c.jpg');">
                                     </div>
                                 </div>
+                                <!-- Điều khiển Slide 2 -->
                                 <label for="carousel-1"
-                                    class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900
-                                      leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                                    class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
                                 <label for="carousel-3"
-                                    class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900
-                                      leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                                    class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
-                                <!--Slide 3-->
+                                <!-- Slide 3 -->
                                 <input class="carousel-open" type="radio" id="carousel-3" name="carousel"
                                     aria-hidden="true" hidden="">
-                                <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                                    <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
-                                        style="background-image: url('https://i.pinimg.com/564x/f2/ab/b1/f2abb166e8aeea7184fcad79ae00683c.jpg');">
+                                <div class="carousel-item absolute opacity-0 rounded-lg overflow-hidden"
+                                    style="height:40vh;">
+                                    <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+                                        style="background-image: url('https://i.pinimg.com/564x/77/88/81/7788817e9b092b15ebb90f05349d3585.jpg');">
                                     </div>
                                 </div>
+                                <!-- Điều khiển Slide 3 -->
                                 <label for="carousel-2"
-                                    class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                                    class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
                                 <label for="carousel-1"
-                                    class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                                    class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
-                                <!-- Add additional indicators for each slide-->
+                                <!-- Chỉ báo (Indicators) -->
                                 <ol class="carousel-indicators">
                                     <li class="inline-block mr-3">
                                         <label for="carousel-1"
@@ -143,15 +148,14 @@
                                             class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
                                     </li>
                                 </ol>
-
                             </div>
                         </div>
-                        <!-- ----------- -->
                     </div>
                 </div>
 
                 <!-- Thông tin nhà hàng -->
-                <div class="w-1/2 p-8 flex flex-col justify-center"> <!-- Giữ nội dung thông tin nhà hàng nằm giữa -->
+                <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
+                    <!-- Sử dụng w-full cho mobile và w-1/2 cho desktop -->
                     <h2 class="text-2xl font-bold text-gray-800 mb-2">Nhà hàng: <strong class="text-red-400">Hùng
                             Vương</strong></h2>
                     <p class="text-gray-600 mb-4"><i class="bi bi-geo-alt-fill text-red-600"></i> TP.Hồ Chí Minh</p>
@@ -161,7 +165,7 @@
                 </div>
             </div>
         </div>
-
+<!-- --------------------- -->
         <!-- Card Menu -->
         <div class="mt-8 bg-white rounded-lg p-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
