@@ -8,6 +8,7 @@
     <title>Review</title>
     <link href="dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="tailwind.config.js">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@latest/dist/tailwind.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
@@ -75,11 +76,36 @@
                     </div>
 
                     <!-- Icon người dùng -->
-                    <div class="flex items-center">
-                        <a href="login.html"
-                            class="inline-block no-underline hover:text-yellow-400 text-yellow-500 text-2xl">
-                            <i class="bi bi-person-circle"></i>
-                        </a>
+                    <div class="relative inline-block text-left">
+                        <i class="bi bi-person-circle text-yellow-500 text-2xl cursor-pointer" onclick="toggleMenu()"></i>
+
+                        <!-- Dropdown menu -->
+                        <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+                            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" id="dropdown-menu">
+                            <div class="py-1" role="none">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-400" role="menuitem" tabindex="-1"
+                                    id="menu-item-0">Đăng nhập</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                    id="menu-item-1">Đăng ký</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                    id="menu-item-2">Đăng ký cửa hàng</a>
+                            </div>
+                        </div>
+                        <script>
+                            function toggleMenu() {
+                                const menu = document.getElementById('dropdown-menu');
+                                menu.classList.toggle('hidden');
+                            }
+
+                            // Ẩn menu khi nhấp ra ngoài
+                            window.addEventListener('click', function (e) {
+                                const menu = document.getElementById('dropdown-menu');
+                                const button = document.getElementById('menu-button');
+                                if (!button.contains(e.target) && !menu.contains(e.target)) {
+                                    menu.classList.add('hidden');
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
 
